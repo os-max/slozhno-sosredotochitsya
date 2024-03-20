@@ -1,0 +1,32 @@
+{
+  "name": "slozhno-sosredotochitsya",
+  "version": "1.0.0",
+  "description": "Проектная работа \"Сложно сосредоточиться\"",
+  "main": "./scripts/script.js",
+  "scripts": {
+    "test": "echo \"Oh hi!\"",
+    "check": "prettier --check './**/*.{html,css,js}'",
+    "format": "prettier --write './**/*.{html,css,js}'",
+    "lint": "stylelint **/*.css",
+    "lintfix": "stylelint **/*.css --fix",
+    "checkAll": "npm run check && npm run lint",
+    "fixAll": "npm run lintfix && npm run format"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/os-max/posmotri_v_okno.git"
+  },
+  "keywords": [
+    "Practicum"
+  ],
+  "author": "М. Осипов",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/os-max/slozhno-sosredotochitsya/issues"
+  },
+  "homepage": "https://github.com/os-max/slozhno-sosredotochitsya#readme",
+  "dependencies": {
+    "prettier": "^3.2.5",
+    "stylelint": "^16.2.1"
+  }
+}
