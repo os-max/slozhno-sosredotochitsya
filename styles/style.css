@@ -1,89 +1,79 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-:root {
-  --background-color: #000028;
-  --accent-color: #ff0070;
-  --title-color: #db00ff;
-  --font-size: 18px;
-  --font-family: 'IBM Plex mono';
-  --text-color: #f1b2ce;
-  --line-height: 23.4px;
-}
-
 .page {
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
   background-color: var(--background-color);
   background-image: url(../images/cover-image-dark.png);
-  background-size: cover;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
-  font-size: var(--font-size);
-  font-family: var(--font-family);
-  color: var(--text-color);
-  line-height: var(--line-height);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .header {
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
+  justify-items: end;
+  align-items: center;
 
   /* clamp используется чтобы плавно перейти от 10px к 20px, 2.7vi подходит к 20 почти на брейкпоинте в 768px и дает плавный переход */
 
   padding: clamp(10px, 2.7vi , 20px) clamp(10px, 2.7vi , 20px);
-  align-items: center;
-  justify-items: end;
   block-size: 100vb;
 }
 
 .decorated-zone::before {
   content: '';
-  inline-size: 25px;
-  block-size: 25px;
-  border-width: 1px 1px 0 0;
-  border-color: var(--accent-color);
-  border-style: solid;
+  grid-column: 1;
+  grid-row: 1;
   justify-self: end;
   align-self: baseline;
-  grid-row: 1;
-  grid-column: 1;
+  border-width: 1px 1px 0 0;
+  border-style: solid;
+  border-color: var(--accent-color);
+  inline-size: 25px;
+  block-size: 25px;
 }
 
 .decorated-zone::after {
   content: '';
-  inline-size: 25px;
-  block-size: 25px;
-  border-width: 0 0 1px 1px;
-  border-color: var(--accent-color);
-  border-style: solid;
+  grid-column: 1;
+  grid-row: 3;
   justify-self: start;
   align-self: last baseline;
-  grid-row: 3;
-  grid-column: 1;
+  border-width: 0 0 1px 1px;
+  border-style: solid;
+  border-color: var(--accent-color);
+  inline-size: 25px;
+  block-size: 25px;
 }
 
 .rec {
   position: absolute;
+  vertical-align: middle;
+  color: var(--accent-color);
   inset-block-start: clamp(10px, 2.7vi , 20px);
   inset-inline-end: clamp(19px, 5vi , 29px);
-  color: var(--accent-color);
-  vertical-align: middle;
 }
 
 .rec::after {
   content: '';
   display: inline-block;
+  border-radius: 50%;
+  vertical-align: middle;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
   inline-size: 9px;
   block-size: 9px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  box-shadow: 0 0 4px 2px var(--accent-color);
-  vertical-align: middle;
 }
 
 .header__theme-menu {
-  grid-row: 1;
   grid-column: 1;
+  grid-row: 1;
 }
 
 .header__theme-menu-list {
@@ -94,16 +84,16 @@
 }
 
 .header__theme-menu-button {
-  background-color: transparent;
   border: 1px solid transparent;
-  max-block-size: 26px;
   padding: 1.5px 13px;
   line-height: 100%;
+  background-color: transparent;
+  max-block-size: 26px;
 }
 
 .header__theme-menu-button:hover {
-  cursor: pointer;
   border: 1px solid var(--accent-color);
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
@@ -111,22 +101,22 @@
 }
 
 .header__title {
-  line-height: 82.5%;
-  color: var(--title-color);
-  text-shadow: 4px 4px var(--accent-color);
-  justify-self: start;
-  grid-row: 2;
   grid-column: 1;
+  grid-row: 2;
+  justify-self: start;
+  color: var(--title-color);
+  line-height: 82.5%;
+  text-shadow: 4px 4px var(--accent-color);
 }
 
 .header__text {
-  grid-row: 3;
   grid-column: 1;
+  grid-row: 3;
 }
 
 .accent-text {
-  background-color: var(--accent-color);
   color: var(--background-color);
+  background-color: var(--accent-color);
 }
 
 .bold {
@@ -134,9 +124,9 @@
 }
 
 .main {
-  padding: clamp(40px, 10vi, 60px) clamp(10px, 2.7vi , 20px) 0;
   display: grid;
-  gap: clamp(50px, 11vi,80px)
+  gap: clamp(50px, 11vi,80px);
+  padding: clamp(40px, 10vi, 60px) clamp(10px, 2.7vi , 20px) 0;
 }
 
 .article {
@@ -176,8 +166,8 @@
 }
 
 .content-section__text__link {
-  text-shadow: 1px 1px var(--accent-color);
   text-decoration: none;
+  text-shadow: 1px 1px var(--accent-color);
 }
 
 .content-section__text__link:hover {
@@ -194,16 +184,16 @@
 .footer {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  block-size: 100vb;
   padding: clamp(10px, 2.7vi , 20px) clamp(10px, 2.7vi , 20px);
+  block-size: 100vb;
 }
 
 .footer__title {
   justify-self: center;
   align-self: center;
   color: var(--title-color);
-  text-shadow: 2px 2px var(--accent-color);
   line-height: 82.5%;
+  text-shadow: 2px 2px var(--accent-color);
 }
 
 .image {
@@ -233,8 +223,8 @@
 @media (768px <= width) {
 
   .header__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vi, 9.8125rem);
     margin-left: -20px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vi, 9.8125rem);
   }
 
   .header__text {
@@ -251,13 +241,13 @@
   }
 
   .section-tall .article__title {
+    grid-column: 1;
 
   /* grid-row-end: -1 не работает для неявных ячеек грида, поэтому занять всю левую колонку не выйлет.
   Занял минимально необходимое место для подзаголовка, но добавится отступ, если секций будет меньше двух */
 
     grid-row-start: 1;
     grid-row-end: 3;
-    grid-column: 1;
   }
 
   .article__subtitle,
@@ -266,8 +256,8 @@
   }
 
   .image_section {
-    grid-template-rows: min-content;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: min-content;
     grid-auto-flow: row dense;
     gap: 20px;
   }
@@ -306,8 +296,8 @@
   }
 
   .content-section-wide {
-    inline-size: calc((100% - 40px) / 3);
     flex-grow: 1;
+    inline-size: calc((100% - 40px) / 3);
   }
 
 }
