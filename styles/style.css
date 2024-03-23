@@ -23,6 +23,7 @@
 
   padding: clamp(10px, 2.7vi , 20px) clamp(10px, 2.7vi , 20px);
   block-size: 100vb;
+  min-block-size: 668px;
 }
 
 .decorated-zone::before {
@@ -53,8 +54,10 @@
 
 .rec {
   position: absolute;
+  display: var(--rec-display);
   vertical-align: middle;
   color: var(--accent-color);
+  text-transform: uppercase;
   inset-block-start: clamp(10px, 2.7vi , 20px);
   inset-inline-end: clamp(19px, 5vi , 29px);
 }
@@ -82,13 +85,13 @@
 }
 
 .header__theme-menu-button {
-  color: var(--button-color);
   border: 1px solid transparent;
   padding: 1.5px 13px;
+  color: var(--button-color);
   line-height: 100%;
+  text-align: center;
   background-color: transparent;
   max-block-size: 26px;
-  text-align: center;
 }
 
 .header__theme-menu-button:hover {
@@ -135,50 +138,50 @@
   padding: clamp(40px, 10vi, 60px) clamp(10px, 2.7vi , 20px) 0;
 }
 
-.article {
+.section {
   display: grid;
   gap: 20px;
 }
 
-.article__title {
+.section__title {
   color: var(--article-title-color);
   font-size: var(--font-size);
 }
 
-.content-section {
+.article {
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: min-content;
   gap: 10px;
 }
 
-.content-section__title {
+.article__title {
   font-weight: 400;
 }
 
-.content-section__title,
+.article__title,
 .image_section__title,
-.article__subtitle {
+.section__subtitle {
   font-size: var(--font-size);
 }
 
-.content-section__text__link {
+.article__text__link {
   text-decoration: none;
   text-shadow: 1px 1px var(--accent-color);
 }
 
-.content-section__text__link:hover {
+.article__text__link:hover {
 
   /* text-decoration: underline получает такую же тень как и текст, чтобы это обойти использован border */
 
   border-bottom: 1px solid var(--text-color);
 }
 
-.content-section__text__link:focus {
+.article__text__link:focus {
   outline: none;
 }
 
-.content-section__text__link:focus-visible {
+.article__text__link:focus-visible {
   outline: 1px solid;
 }
 
@@ -198,8 +201,8 @@
 }
 
 .image {
-  width: 100%;
   object-fit: cover;
+  inline-size: 100%;
 }
 
 .footer {
@@ -207,6 +210,7 @@
   grid-template-rows: 1fr 1fr 1fr;
   padding: clamp(10px, 2.7vi , 20px) clamp(10px, 2.7vi , 20px);
   block-size: 100vb;
+  min-block-size: 668px;
 }
 
 .footer__title {
@@ -252,7 +256,7 @@
     max-inline-size: 491px;
   }
 
-  .section-tall, .section-wide {
+  .tall-article, .wide-article {
     grid-template-columns: 1fr 2fr;
   }
 
@@ -260,7 +264,7 @@
     grid-column: 1/-1;
   }
 
-  .section-tall .article__title {
+  .tall-article .section__title {
     grid-column: 1;
 
   /* grid-row-end: -1 не работает для неявных ячеек грида, поэтому занять всю левую колонку не выйлет.
@@ -270,8 +274,8 @@
     grid-row-end: 3;
   }
 
-  .article__subtitle,
-  .content-section-tall {
+  .section__subtitle,
+  .article-tall {
     grid-column: 2;
   }
 
@@ -310,7 +314,7 @@
     flex-direction: row;
   }
 
-  .section-tall, .section-wide {
+  .tall-article, .wide-article {
     grid-template-columns: 1fr 2.06fr;
   }
 
@@ -319,7 +323,7 @@
     flex-wrap: wrap;
   }
 
-  .content-section-wide {
+  .article-wide {
     flex-grow: 1;
     inline-size: calc((100% - 40px) / 3);
   }

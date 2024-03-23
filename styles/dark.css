@@ -18,6 +18,7 @@
   --article-title-color: #ff0070;
   --decoration-color: #ff0070;
   --button-color: #ff0070;
+  --rec-display: inline;
 }
 
 
@@ -44,5 +45,6 @@
     --article-title-color: #ff0070;
     --decoration-color: #ff0070;
     --button-color: #ff0070;
+    --rec-display: inline;
   }
 }
