@@ -13,6 +13,11 @@
   --text-color: #f1b2ce;
   --line-height: 23.4px;
   --hover-color: #ff007066;
+  --bg: url(../images/cover-image-dark.png);
+  --accent-text-color: #000028;
+  --article-title-color: #ff0070;
+  --decoration-color: #ff0070;
+  --button-color: #ff0070;
 }
 
 
@@ -34,5 +39,10 @@
     --text-color: #f1b2ce;
     --line-height: 23.4px;
     --hover-color: #ff007066;
+    --bg: url(../images/cover-image-dark.png);
+    --accent-text-color: #000028;
+    --article-title-color: #ff0070;
+    --decoration-color: #ff0070;
+    --button-color: #ff0070;
   }
 }
