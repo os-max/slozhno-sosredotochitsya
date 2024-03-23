@@ -12,6 +12,7 @@
   --font-family: 'IBM Plex mono';
   --text-color: #353430;
   --line-height: 23.4px;
+  --hover-color: #32312d66;
 }
 
 .page.theme_light {
@@ -34,6 +35,23 @@
   display: none;
 }
 
+.theme_light .decorated-zone::before,
+.theme_light .decorated-zone::after {
+  border-color: var(--text-color);
+}
+
+.theme_light .header__theme-menu-button {
+  color: var(--text-color);
+}
+
+.theme_light .header__theme-menu-button:hover {
+  border-color: var(--hover-color);
+}
+
+.theme_light .header__theme-menu-button_active {
+  border-color: var(--text-color);
+}
+
 @media (prefers-color-scheme: light) {
 
   :root {
@@ -44,6 +62,7 @@
     --font-family: 'IBM Plex mono';
     --text-color: #353430;
     --line-height: 23.4px;
+    --hover-color: #32312d66;
   }
 
   .page {
@@ -60,5 +79,22 @@
 
   .rec {
     display: none;
+  }
+
+  .decorated-zone::before,
+  .decorated-zone::after {
+  border-color: var(--text-color);
+}
+
+  .header__theme-menu-button {
+    color: var(--text-color);
+  }
+
+  .header__theme-menu-button:hover {
+    border-color: var(--hover-color);
+  }
+
+  .header__theme-menu-button_active {
+    border-color: var(--text-color);
   }
 }

@@ -12,6 +12,7 @@
   --font-family: 'IBM Plex mono';
   --text-color: #f1b2ce;
   --line-height: 23.4px;
+  --hover-color: #ff007066;
 }
 
 
@@ -32,5 +33,6 @@
     --font-family: 'IBM Plex mono';
     --text-color: #f1b2ce;
     --line-height: 23.4px;
+    --hover-color: #ff007066;
   }
 }
